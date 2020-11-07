@@ -15,7 +15,7 @@ function readyNow(){
 function employeeInput(event) {
 
     event.preventDefault();
-    //----createing an employee object ----
+    //----createing an employee object & pushing to array ----
     let newEmployeeObj = {
         firstName: $('#firstName').val(),
         lastName: $('#lastName').val(),
@@ -24,6 +24,9 @@ function employeeInput(event) {
         salary: $('#salary').val()
     }
     employeeArray.push( newEmployeeObj ); 
+
+    //calling a function that adds the employee to the DOM
+    addEmployeeToDOM(employeeArray);
 
     //---- Clearing input values ----
     $('#firstName').val('');
@@ -41,6 +44,7 @@ function employeeInput(event) {
         
         console.log('in if');
         
+
     }
 }
 
@@ -52,4 +56,14 @@ function monthlyCostCalculator(){
        monthlyCost += Number(employee.salary);
     }
     return monthlyCost;
+}
+
+function addEmployeeToDOM( array ) {   
+    console.log('in add employee');
+     
+    let i = array.length;
+    let firstName = array[0].firstName;
+    
+    // $('ul').append('<li> ',array[i].firstName,' </li>');
+    
 }
