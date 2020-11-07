@@ -1,0 +1,19 @@
+body{
+    background-color: burlywood;
+}
+
+.redBackground{
+    background-color: red;
+}
+.button {
+    margin: 20px;
+    background-color: #2C3852; /* Green */
+    border: none;
+    color: white;
+    padding: 8px 14px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+  }
