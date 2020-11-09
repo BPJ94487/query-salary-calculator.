@@ -7,7 +7,8 @@ let employeeArray = [];
 function readyNow(){    
     console.log('Hello from jQuery');
     //intaking the employee input forms on click and sending to employeeInput
-    $("#submit").on('click', employeeInput);    
+    $("#submit").on('click', employeeInput);  
+    $("#deleteButton").on('click', 'ul', removeEmployeeFromDOM)  
 }
 
 // taking in form information from the forms and creating an 
@@ -20,11 +21,12 @@ function employeeInput(event) {
         firstName: $('#firstName').val(),
         lastName: $('#lastName').val(),
         idNumber: $('#idNumber').val(),
-        title: $('#title').val(),
+        job: $('#job').val(),
         salary: $('#salary').val()
     }
     employeeArray.push( newEmployeeObj ); 
-
+    
+        
     //calling a function that adds the employee to the DOM
     addEmployeeToDOM(employeeArray);
 
@@ -32,7 +34,7 @@ function employeeInput(event) {
     $('#firstName').val('');
     $('#lastName').val('');
     $('#idNumber').val('');
-    $('#title').val('');
+    $('#job').val('');
     $('#salary').val('');
 
     //calculate monthly coast and append to the DOM    
@@ -43,8 +45,6 @@ function employeeInput(event) {
         $('#monthlyCost').addClass('redBackground');
         
         console.log('in if');
-        
-
     }
 }
 
@@ -58,12 +58,27 @@ function monthlyCostCalculator(){
     return monthlyCost;
 }
 
-function addEmployeeToDOM( array ) {   
-    console.log('in add employee');
-     
-    let i = array.length;
-    let firstName = array[0].firstName;
+function addEmployeeToDOM( array ) {        
+
+    let i = array.length - 1;
+
+    $('#firstNameCollumn').append( '<ul>', array[i].firstName,' </ul>' );
+    $('#lastNameCollumn').append('<ul>' ,array[i].lastName, '</ul>');
+    $('#idNumberCollumn').append('<ul>' ,array[i].idNumber, '</ul>');
+    $('#jobCollumn').append('<ul>' ,array[i].job, '</ul>');
+    $('#salaryCollumn').append('<ul>' ,array[i].salary, '</ul>');
+    $('#deleteButton').append('<ul><button>DELETE</button></ul>');
+}
+
+function removeEmployeeFromDOM() {
+    $('#firstNameCollumn').remove();
     
-    // $('ul').append('<li> ',array[i].firstName,' </li>');
+   
+   
+    // $('#lastNameCollumn').remove();
+    // $('#idNumberCollumn').remove();
+    // $('#jobCollumn').remove();
+    // $('#salaryCollumn').remove();
+    // $('#deleteButton').
     
 }

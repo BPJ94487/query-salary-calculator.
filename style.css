@@ -17,3 +17,50 @@ body{
     font-size: 16px;
     cursor: pointer;
   }
+
+  #infoIntake{
+    text-align: center;
+  }
+
+  #firstNameCollumn{
+      float: left;
+      margin: 0 1.5%;
+      width: 10%;
+  }
+
+#lastNameCollumn{
+    float: left;
+    margin: 0 1.5%;
+    width: 10%;
+}
+
+#idNumberCollumn{
+    float: left;
+    margin: 0 1.5%;
+    width: 10%;
+}
+
+#jobCollumn{
+    float: left;
+    margin: 0 1.5%;
+    width: 10%;
+}
+#salaryCollumn{
+    float: left;
+    margin: 0 1.5%;
+    width: 10%;
+}
+ 
+#deleteButton{
+    float: left;
+    margin: 1 1.5%;
+    width: 10%;
+}
+
+#monthlyCost{
+    position: relative;
+}
+
+  
+  
+  
